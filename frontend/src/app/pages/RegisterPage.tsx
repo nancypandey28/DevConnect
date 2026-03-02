@@ -72,14 +72,14 @@ export function RegisterPage() {
       setServerError('');
 
       const response = await fetch(
-        'http://localhost:5000/api/auth/register', 
+        'https://devconnect-4-32v6.onrender.com/api/auth/register', 
         // 🔴 CHANGE THIS URL IF:
         // - Your backend runs on different port
         // - Your route is different (e.g. /api/users/register)
 
         {
           method: 'POST', 
-          // 🔴 CHANGE METHOD if your backend uses something else (usually POST)
+         
 
           headers: {
             'Content-Type': 'application/json'
@@ -87,13 +87,12 @@ export function RegisterPage() {
 
           body: JSON.stringify({
             name: formData.fullName,
-            // 🔴 CHANGE KEY NAME if backend expects:
-            // name instead of fullName
+           
 
             email: formData.email,
 
             password: formData.password
-            // 🔴 ADD OR REMOVE FIELDS depending on backend
+            
           })
         }
       );
