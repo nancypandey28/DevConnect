@@ -19,3 +19,11 @@ app.listen(5000,()=>{
 
 app.use(express.json());
 app.use("/api/auth", authRoutes);
+
+const postRoutes= require("./routes/postRoutes");
+app.use("/api/posts",postRoutes);
+
+const userRoutes= require("./routes/userRoutes");
+
+
+app.use("/api/users", userRoutes);
